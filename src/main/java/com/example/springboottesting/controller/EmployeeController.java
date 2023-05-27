@@ -38,7 +38,7 @@ public class EmployeeController {
     @PutMapping("{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long employeeId,
                                                    @RequestBody Employee employee){
-        return employeeService.getEmployeeById(employeeId)
+        return employeeService.getEmployeeById(employeeId)  // not best practices is to have logic in controller
                 .map(savedEmployee -> {
 
                     savedEmployee.setFirstName(employee.getFirstName());
