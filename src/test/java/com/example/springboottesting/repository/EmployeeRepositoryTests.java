@@ -7,6 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.Optional;
 @DataJpaTest
 // we add this annotation to test the persistence layer (repository) components that will autoconfigure
 // in-memory embedded database for testing purposes
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) in order to disable in-memory db
 public class EmployeeRepositoryTests {
 
     private static final String UPDATED_NAME = "updated-name";
